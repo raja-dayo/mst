@@ -1024,11 +1024,30 @@
 
 		public function resetCusPass(){
 
-			// echo "<pre>";
-			// print_r($_REQUEST);
-
+			
 			$result = $this->Admin->cusPassResest($_REQUEST);
 			
+			echo $result;
+		}
+
+		public function updateCustomer(){
+
+			$data=array(
+				'cus_id'				=>$_REQUEST['cus_id'],
+				'cus_fname'				=>$_REQUEST['fname'],
+				'cus_lname'				=>$_REQUEST['lname'],
+				'cus_email'				=>$_REQUEST['email'],
+				'cus_phone'				=>$_REQUEST['phone'],
+				'cus_add'				=>$_REQUEST['add'],
+				'cus_city'				=>$_REQUEST['city'],
+				'cus_state'				=>$_REQUEST['state'],
+				'cus_country'			=>$_REQUEST['country'],
+				'cus_zipcode'			=>$_REQUEST['zipcode'],
+				'cus_update_on'			=>date('Y-m-d H:i:s', time()),
+			);
+
+			$result=$this->Admin->update_user($data);
+
 			echo $result;
 		}
 	}

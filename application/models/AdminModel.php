@@ -572,6 +572,15 @@
 			
 			return ($result ? true:false);
 		}
+
+		public function update_user($data){
+
+			$this->db->where('cus_id',$data['cus_id']);
+
+			$result=$this->db->update('customers',$data);
+			
+			return ($result ? true: false);
+		}
 	}
 
 ?>

@@ -395,20 +395,62 @@
 			        </button>
 	      		</div>
 		        <div class="modal-body">
-		        	<form id="loginForm" name="loginForm">
-		          		<div class="form-group">
-		            		<label for="recipient-name" class="col-form-label">First name</label>
-		            		<input type="text" class="form-control" id="fname" name="fname">
-		          		</div>
-		          		<div class="form-group">
-		            		<label for="recipient-name" class="col-form-label">Last Name</label>
-		            		<input type="text" class="form-control" id="lname" name="lname">
-		          		</div>
-		        	</form>
+		        	<form>
+					  <div class="form-row">
+					    <div class="form-group col-lg-6">
+					      <label for="inputEmail4">First Name</label>
+					      <input type="text" class="form-control" id="fname" placeholder="First Name" value="<?=$orders[0]['cus_fname']?>">
+					    </div>
+					    <div class="form-group col-lg-6">
+					      <label for="inputPassword4">Last Name</label>
+					      <input type="text" class="form-control" id="lname" placeholder="Last Name" value="<?=$orders[0]['cus_lname']?>">
+					    </div>
+					  </div>
+					  <div class="form-row">
+					    <div class="form-group col-lg-6">
+					      <label for="inputEmail4">Email</label>
+					      <input type="email" class="form-control" id="email" placeholder="Email" value="<?=$orders[0]['cus_email']?>">
+					    </div>
+					    <div class="form-group col-lg-6">
+					      <label for="inputPassword4">Phone</label>
+					      <input type="text" class="form-control" id="phone" placeholder="Phone" value="<?=$orders[0]['cus_phone']?>">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="inputAddress">Address</label>
+					    <input type="text" class="form-control" id="add" placeholder="1234 Main St" value="<?=$orders[0]['cus_add']?>">
+					  </div>
+					 
+					  <div class="form-row">
+					    <div class="form-group col-lg-6">
+					      <label for="inputCity">City</label>
+					      <input type="text" class="form-control" id="city" value="<?=$orders[0]['cus_city']?>">
+					    </div>
+					   
+					    <div class="form-group col-lg-6">
+					      <label for="inputZip">Zip</label>
+					      <input type="text" class="form-control" id="zipcode" value="<?=$orders[0]['cus_zipcode']?>">
+					    </div>
+					  </div>
+
+					   <div class="form-row">
+					    <div class="form-group col-lg-6">
+					      <label for="inputState">State</label>
+					        <input type="text" class="form-control" id="state" value="<?=$orders[0]['cus_state']?>">
+					    </div>
+
+					    <div class="form-group col-lg-6">
+					      <label for="inputCity">Country</label>
+					      <input type="text" class="form-control" id="country" value="<?=$orders[0]['cus_country']?>">
+					    </div>
+					  </div>
+					  
+					<button type="button" id="update1" class="btn btn-primary" data-dismiss="modal" >Save</button>
+					</form>
 		        </div>
 	      		<div class="modal-footer">
 	        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	        		<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+	        		<button type="button" id="update" class="btn btn-primary" data-dismiss="modal" >Save</button>
 	      		</div>
 	    	</div>
 	   </div>
@@ -422,8 +464,9 @@
 
 <script>
     $(document).ready(function(){
+        
         $("#ex").click(function(){
-             
+
             var cus_id = "<?=$orders[0]['cus_id']?>"
             
             var pass   = $("#password").val();
@@ -446,6 +489,32 @@
                 	},
                 });
             }
-      });
-});
+        });
+
+        $("#update").click(function(){
+
+            var fname 		=$("#fname").val();
+            var lname 		=$("#lname").val();
+            var email 		=$("#email").val();
+            var phone 		=$("#phone").val();
+            var add   		=$("#add").val();
+            var city  		=$("#city").val();
+            var state 		=$("#state").val();
+            var country 	=$("#country").val();
+            var zipcode 	=$("#zipcode").val();
+            var cus_id 		=<?=$orders[0]['cus_id']?>;
+
+            $.ajax({
+
+            	url:"<?=base_url().'admin/updateCustomer'?>",
+            	type:"POST",
+            	data:{cus_id, fname, lname, email, phone, add, city, state, country, zipcode},
+            	success:function(responce){
+
+            		//alert(responce);
+            		location.reload(true);
+            	},
+            });
+        });
+	});
 </script> 
