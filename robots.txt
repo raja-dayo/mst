@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+Disallow: https://www.mysleepingtabs.com/asset/
+
+Disallow: https://sub.mysleepingtabs.com/
+
+https://www.mysleepingtabs.com/sitemap.xml
