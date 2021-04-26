@@ -41,25 +41,17 @@
                       		<i class="ti-file btn-icon-prepend"></i>
                       		Block
                     	</button>
-                    	<button type="button" class="btn btn-outline-secondary btn-icon-text">
-                      		Ban
-                      		<i class="ti-file btn-icon-append"></i>                          
-                    	</button>
-                        <button type="button" class="btn btn-outline-danger btn-icon-text">
+                    	
+
+                        <button type="button" class="btn btn-danger btn-icon-text" id="ban" value="<?=$orders[0]['cus_status']?>">
                           <i class="ti-alert btn-icon-prepend"></i>                                                    
-                          Delete
+                          <?php
+                          	echo ($orders[0]['cus_status']==1 ? 'Unban':'Ban');
+                          ?>
                         </button>
                         <button type="button" class="btn btn-outline-success btn-icon-text" data-toggle="modal" data-target="#updateCus" data-whatever="@mdo"><i class="ti-upload btn-icon-prepend"></i>                                                    
                           Update</button>
-                        <!-- <button type="button" class="btn btn-outline-success btn-icon-text">
-                          <i class="ti-upload btn-icon-prepend"></i>                                                    
-                          Update
-                        </button> -->
-                        <!-- <button type="button" class="btn btn-outline-warning btn-icon-text" onclick="showSwal('custom-html')">
-                          <i class="ti-reload btn-icon-prepend"></i>                                                    
-                          Reset
-                        </button> -->
-                    	<!--<button class="btn btn-outline-success" onclick="showSwal('custom-html')">Click here!</button>-->
+                     
                     	
                     	<button type="button" class="btn btn-outline-warning btn-icon-text" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="ti-reload btn-icon-prepend"></i>Reset Password</button>
                   	</div>
@@ -409,7 +401,7 @@
 					  <div class="form-row">
 					    <div class="form-group col-lg-6">
 					      <label for="inputEmail4">Email</label>
-					      <input type="email" class="form-control" id="email" placeholder="Email" value="<?=$orders[0]['cus_email']?>">
+					      <input type="email" class="form-control" id="email" placeholder="Email"  value="<?=$orders[0]['cus_email']?>">
 					    </div>
 					    <div class="form-group col-lg-6">
 					      <label for="inputPassword4">Phone</label>
@@ -445,7 +437,7 @@
 					    </div>
 					  </div>
 					  
-					<button type="button" id="update1" class="btn btn-primary" data-dismiss="modal" >Save</button>
+					
 					</form>
 		        </div>
 	      		<div class="modal-footer">
@@ -515,6 +507,24 @@
             		location.reload(true);
             	},
             });
+        });
+
+        $("#ban").click(function(){
+
+        	var cus_id = "<?=$orders[0]['cus_id']?>";
+        	var status = $(this).val();
+        	
+        	$.ajax({
+
+        		url:"<?=base_url().'admin/banAction'?>",
+        		type:"POST",
+        		data:{cus_id, status},
+        		success:function(responce){
+
+        			location.reload(true);
+        			console.log(responce);
+        		},
+        	});
         });
 	});
 </script> 

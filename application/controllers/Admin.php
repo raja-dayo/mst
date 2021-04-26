@@ -1050,5 +1050,32 @@
 
 			echo $result;
 		}
+
+		public function banAction(){
+
+			if($_REQUEST['status']==1){
+
+				$this->Admin->unBanCus($_REQUEST['cus_id']);
+				if($result){
+					echo "Now you are free";
+				}else{
+
+					echo "something is wrong";
+				}
+			}
+			else
+			{
+				$result=$this->Admin->banCus($_REQUEST['cus_id']);
+				
+				if($result){
+					echo "You are ban for some time";
+				}else{
+
+					echo "something is wrong";
+				}
+			}
+		// 	echo "<pre>";
+		// 	print_r($_REQUEST);
+		 }
 	}
 ?>

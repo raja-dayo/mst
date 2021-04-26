@@ -581,6 +581,38 @@
 			
 			return ($result ? true: false);
 		}
+
+		public function banCus($id){
+
+			$this->db->set('cus_id', $id);
+			
+			$this->db->set('ban_on', date('Y-m-d H:i:s', time()));
+
+			$this->db->insert('banned');
+
+			$this->db->where('cus_id',$id);
+
+			$this->db->set('cus_status', '1');
+
+			$result=$this->db->update('customers');
+			
+			return ($result ? true:false);
+		}
+
+		public function unBanCus($id){
+
+			$this->db->where('cus_id',$id);
+			
+			$this->db->set('ban_update', date('Y-m-d H:i:s', time()));
+
+			$this->db->update('banned');
+			
+			$this->db->where('cus_id',$id);
+
+			$this->db->set('cus_status', '0');
+
+			$result=$this->db->update('customers');
+		}
 	}
 
 ?>
