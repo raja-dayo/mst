@@ -680,111 +680,127 @@
 			
 			$_SESSION['cus']['info']=$result[0];
 			
-			$link=random_string('alnum', 64);
-			
-			$data=array(
-				'od_customer_id' 		=>$_SESSION['cus']['info']['cus_id'],
-				'od_payment_type'		=>$_REQUEST['pm'],
-				'od_discount'			=> (isset($_SESSION['bit_discount']) ? $_SESSION['bit_discount']:'0'),
-				'od_d_charge'			=>$this->cart->order_ship(),
-				'od_total'				=>$this->cart->total(),
-				'od_link'				=>$link,
-				'od_s_fname'			=>$_REQUEST['shi_info']['cus_fname'],
-				'od_s_lname'    		=>$_REQUEST['shi_info']['cus_lname'],
-				'od_s_email'			=>$_REQUEST['shi_info']['cus_email'],
-				'od_s_num'				=>$_REQUEST['shi_info']['cus_number'],
-				'od_s_country'			=>$_REQUEST['shi_info']['cus_country'],
-				'od_s_state'			=>$_REQUEST['shi_info']['cus_state'],
-				'od_s_city'				=>$_REQUEST['shi_info']['cus_city'],
-				'od_s_zipcode'			=>$_REQUEST['shi_info']['cus_zipcode'],
-				'od_s_add'				=>$_REQUEST['shi_info']['cus_add'],
+			if($_SESSION['cus']['info']['cus_status']==1){
 
-				//'od_create_on'			=>time(),
-				'od_create_on'			=>date('d/m/Y',time()),
-			);
-			
-			unset($_SESSION['bit_discount']);
-			
-			$od_id=$this->Shop->add_order($data);
-			
-			$items=$this->cart->contents();
-			
-			foreach ($items as $key => $item) {
-				
-				$this->Shop->order_detail($od_id, $item['id'], $item['price'], $item['qty']);
-			}
- 			
-			$this->cart->destroy();
-
-			$data['orderInfo']=$this->Shop->od_info($od_id);
-			foreach ($data['orderInfo'] as $key => $od) {
-				
-				if($od['b_id']!=0 && $od['pak_id']!=0){
-
-					//echo 'Brand '.$od['b_id']."  pack".$od['pak_id'];
-					//echo "<br>";	
-					$brands=$this->Shop->brand($od['b_id']);
-					$packs=$this->Shop->pack($od['pak_id']);
+				unset($_SESSION['bit_discount']);
 					
-					foreach ($brands as $brand) {
-						
-						$data['orderInfo'][$key]['b_name']=$brand['b_name'];						
-					}
+				unset($_SESSION['ss_id']);
+				
+				$this->cart->destroy();
 
-					foreach ($packs as $pack) {
-						
-						$data['orderInfo'][$key]['pack_name']=$pack['pak_name'];						
-					}
-				} 
+				$this->session->set_flashdata('msg','acb');
+
+				return redirect('');
 			}
-            $data['banks']=$this->Shop->getBanks();
-			$this->load->library('phpmailer_lib');
+			else
+			{
+				$link=random_string('alnum', 64);
+			
+				$data=array(
+					'od_customer_id' 		=>$_SESSION['cus']['info']['cus_id'],
+					'od_payment_type'		=>$_REQUEST['pm'],
+					'od_discount'			=> (isset($_SESSION['bit_discount']) ? $_SESSION['bit_discount']:'0'),
+					'od_d_charge'			=>$this->cart->order_ship(),
+					'od_total'				=>$this->cart->total(),
+					'od_link'				=>$link,
+					'od_s_fname'			=>$_REQUEST['shi_info']['cus_fname'],
+					'od_s_lname'    		=>$_REQUEST['shi_info']['cus_lname'],
+					'od_s_email'			=>$_REQUEST['shi_info']['cus_email'],
+					'od_s_num'				=>$_REQUEST['shi_info']['cus_number'],
+					'od_s_country'			=>$_REQUEST['shi_info']['cus_country'],
+					'od_s_state'			=>$_REQUEST['shi_info']['cus_state'],
+					'od_s_city'				=>$_REQUEST['shi_info']['cus_city'],
+					'od_s_zipcode'			=>$_REQUEST['shi_info']['cus_zipcode'],
+					'od_s_add'				=>$_REQUEST['shi_info']['cus_add'],
 
-			$mail = $this->phpmailer_lib->load();
+					//'od_create_on'			=>time(),
+					'od_create_on'			=>date('d/m/Y',time()),
+				);
+				
+				unset($_SESSION['bit_discount']);
+				
+				$od_id=$this->Shop->add_order($data);
+				
+				$items=$this->cart->contents();
+				
+				foreach ($items as $key => $item) {
+					
+					$this->Shop->order_detail($od_id, $item['id'], $item['price'], $item['qty']);
+				}
+	 			
+				$this->cart->destroy();
 
-			$mail->SMTPOptions = array(
-                'ssl' => array(
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true
-                ));
-			// SMTP configuration
-	       $mail->IsSMTP(); // enable SMTP
-	       $mail->Host  = 'ssl://smtp.gmail.com'; // enable SMTP
-	        //$mail->SMTPDebug = 1;  // debugging: 1 = errors and messages, 2 = messages only
-	        $mail->SMTPAuth = true;  // authentication enabled
-	        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
-	        $mail->SMTPAutoTLS = false;
-	        $mail->Port = 465;
-	        $mail->Username = 'no-reply@mysleepingtabs.com';
-	        $mail->Password = 'IIwrtgaf786!@';
-	        $mail->setFrom('no-reply@mysleepingtabs.com', 'Mysleepingtabs Order');
-	        $mail->addReplyTo($_REQUEST['b_info']['cus_email'], $_REQUEST['b_info']['cus_fname']." ".$_REQUEST['b_info']['cus_lname']);
-	        
-	        // Add a recipient
-	        $mail->addAddress('no-reply@mysleepingtabs.com');
-	        
-	        // Add cc or bcc 
-	       
-	        
-	        // Email subject
-	        $mail->Subject = 'New Order'." ".$od_id;
-	        
-	        // Set email format to HTML
-	        $mail->isHTML(true);
-	        
-	        // Email body content
-	        $mailContent = $this->load->view('page/admin_email',$data, TRUE);
-	        $mail->Body = $mailContent;
+				$data['orderInfo']=$this->Shop->od_info($od_id);
+				foreach ($data['orderInfo'] as $key => $od) {
+					
+					if($od['b_id']!=0 && $od['pak_id']!=0){
 
-			if(!$mail->send()){
+						//echo 'Brand '.$od['b_id']."  pack".$od['pak_id'];
+						//echo "<br>";	
+						$brands=$this->Shop->brand($od['b_id']);
+						
+						$packs=$this->Shop->pack($od['pak_id']);
+						
+						foreach ($brands as $brand) {
+							
+							$data['orderInfo'][$key]['b_name']=$brand['b_name'];						
+						}
 
-	        		return redirect('');
+						foreach ($packs as $pack) {
+							
+							$data['orderInfo'][$key]['pack_name']=$pack['pak_name'];						
+						}
+					} 
+				}
+	            $data['banks']=$this->Shop->getBanks();
+				$this->load->library('phpmailer_lib');
 
-	        }else
-	        {
-	           	return redirect("shop/success/?id=$link");
-			}   
+				$mail = $this->phpmailer_lib->load();
+
+				$mail->SMTPOptions = array(
+	                'ssl' => array(
+	                'verify_peer' => false,
+	                'verify_peer_name' => false,
+	                'allow_self_signed' => true
+	                ));
+				// SMTP configuration
+		       $mail->IsSMTP(); // enable SMTP
+		       $mail->Host  = 'ssl://smtp.gmail.com'; // enable SMTP
+		        //$mail->SMTPDebug = 1;  // debugging: 1 = errors and messages, 2 = messages only
+		        $mail->SMTPAuth = true;  // authentication enabled
+		        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+		        $mail->SMTPAutoTLS = false;
+		        $mail->Port = 465;
+		        $mail->Username = 'no-reply@mysleepingtabs.com';
+		        $mail->Password = 'IIwrtgaf786!@';
+		        $mail->setFrom('no-reply@mysleepingtabs.com', 'Mysleepingtabs Order');
+		        $mail->addReplyTo($_REQUEST['b_info']['cus_email'], $_REQUEST['b_info']['cus_fname']." ".$_REQUEST['b_info']['cus_lname']);
+		        
+		        // Add a recipient
+		        $mail->addAddress('no-reply@mysleepingtabs.com');
+		        
+		        // Add cc or bcc 
+		       
+		        
+		        // Email subject
+		        $mail->Subject = 'New Order'." ".$od_id;
+		        
+		        // Set email format to HTML
+		        $mail->isHTML(true);
+		        
+		        // Email body content
+		        $mailContent = $this->load->view('page/admin_email',$data, TRUE);
+		        $mail->Body = $mailContent;
+
+				if(!$mail->send()){
+
+		        	return redirect('');
+				}
+				else
+				{
+		           	return redirect("shop/success/?id=$link");
+				}
+			}
 		}
 
 		public function success()

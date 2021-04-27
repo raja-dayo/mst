@@ -3,8 +3,7 @@
     
     require_once('header.php');
 ?>
-
-        
+       
         <!-- WELCOME -->
         <section id="welcome" class="p-b-0">
             <div class="container">
@@ -237,7 +236,16 @@
     
     require_once('footer.php');
 ?>
-
+ <?php
+      if($this->session->flashdata('msg'))
+      {
+        ?>
+            <script type="text/javascript">
+                alert("You didn't post order for this time because your banned...!");
+            </script>
+        <?php
+      }
+    ?>
 
 
 

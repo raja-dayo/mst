@@ -303,7 +303,7 @@
 		        $mail->isHTML(true);
 		        
 		        // Email body content
-		        $mailContent = "Yous MST login pass word ".$data['cus_fname'];
+		        $mailContent = "Yours MST login password ".$data['cus_fname'];
 				$mail->Body = $mailContent;
 					        
 		        // Send email
