@@ -683,14 +683,14 @@
 			if($_SESSION['cus']['info']['cus_status']==1){
 
 				unset($_SESSION['bit_discount']);
-					
+				unset($_SESSION['bank_discount']);
 				unset($_SESSION['ss_id']);
 				
 				$this->cart->destroy();
 
 				$this->session->set_flashdata('msg','acb');
 
-				return redirect('');
+				return redirect('ban');
 			}
 			else
 			{
@@ -1175,6 +1175,11 @@
 			$result=$this->Shop->update_abd_card($_SESSION['ss_id'], $email, $full_name, $p_number);
 			
 			echo $result;
+		}
+
+		function banPage(){
+
+			$this->load->view('page/ban');
 		}
 	}
 ?>

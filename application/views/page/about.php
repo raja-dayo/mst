@@ -1,13 +1,13 @@
-<?php 
-	
-	require_once('header.php');
+<?php
+    
+    require_once('header.php');
 ?>
 	  <section>
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="heading-text heading-section">
-                            <h1>About us</h1>
+                            <h1 class="main-heading">About us</h1>
 							<p>We are a business, operating an online pharmacy on the world wide web. We are not selling fakes or scamming people, there is a whole process to it. We only sell BRAND or equally potent GENERICS, we are not selling anything that is manufactured in an underground lab or is bunk. We sell genuine products that are made to treat anxiety, stress, depression, insomnia etc. For us our customers are dear and important, their health and safety in doing business with us is our utmost priority. In any case, we will not JEOPARDIZE the trust instilled upon us. We do have high standards of customer services to ensure each and everyone is treated with care and humbleness. Most of our clients are our friends and that is how we like to do business.</p>
                             <p>If you have any complains, suggestions, queries etc. please shoot us an email DO NOT HESITATE. We love hearing from you guys ! but having said that we want you guys to directly inquire from us rather then going on and posting on forums that are biased and in favor of pharmacies run by their own admins. Yes, most forums talking about drugs are guiding customers towards buying from their own pharmacies by posting false, heinous and misleading feedback regarding most legitimate vendors. Most of these forums promote websites that are selling the exact same brand and generics that we are selling. Before posting questions about our credibility, ask us and use google. You will find enough feedback to confirm our legitimacy.</p>
 							<h4>Our Speciality</h4>

@@ -447,6 +447,39 @@
 	    	</div>
 	   </div>
 	</div>
+
+	<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Ban History</h4>
+					<div class="table-responsive">
+						<table id="order-listing" class="table">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Ban On</th>
+									<th>Ban Off</th>
+									
+								</tr>
+						    </thead>
+						    <tbody>
+						    	<?php
+						    		foreach ($banHistory as $key => $value) {
+						    			?>
+						    				<tr>
+						    					<td><?=$key?></td>
+						    					<td><?=$value['ban_on']?></td>
+						    					<td><?=$value['ban_update']?></td>
+						    				</tr>
+						    			<?php
+						    		}
+						    	?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
 </div>
 
 <?php

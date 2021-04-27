@@ -255,6 +255,8 @@
 				$data['cus_update_on'] = date('Y-m-d H:i:s',time());
 
 				$this->db->where('cus_email', $email);
+				
+				$this->db->where('cus_status', '0');
 
 				$flag=$this->db->update('customers',$data);
 				
@@ -265,9 +267,9 @@
 					$this->db->where('cus_email', $email);
 					
 					$result=$this->db->get('customers');
-
-					return	$result->result_array(); 
 				}
+
+				return	$result->result_array(); 
 			}
 			else
 			{

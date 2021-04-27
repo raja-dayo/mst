@@ -1018,6 +1018,8 @@
 			$data['orders']=$this->Admin->cus_orders($_REQUEST['cus_id']);
 
 			$data['reviews']=$this->Admin->cusReview($data['orders'][0]['cus_id']);
+
+			$data['banHistory']=$this->Admin->cusBanHistory($_REQUEST['cus_id']);
 			
 			$this->load->view('admin/cus_history',$data);
 		}

@@ -236,16 +236,7 @@
     
     require_once('footer.php');
 ?>
- <?php
-      if($this->session->flashdata('msg'))
-      {
-        ?>
-            <script type="text/javascript">
-                alert("You didn't post order for this time because your banned...!");
-            </script>
-        <?php
-      }
-    ?>
+
 
 
 

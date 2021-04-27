@@ -172,6 +172,9 @@
           </div>
         </div>
       </div>
+
+      <input type="hidden" name="u__date" value="<?=date('Y-m-d H:i:s', time())?>">
+      
       <div class="copyright-content">
 			<div class="container">
 				<div class="copyright-text text-center">© <?php echo date('Y',time())?> MysleepingTabs.com All Rights Reserved.</div>

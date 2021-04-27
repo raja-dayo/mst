@@ -613,6 +613,15 @@
 
 			$result=$this->db->update('customers');
 		}
+
+		function cusBanHistory($cus_id){
+
+			$this->db->where('cus_id',$cus_id);
+
+			$result=$this->db->get('banned');
+			
+			return $result->result_array();
+		}
 	}
 
 ?>

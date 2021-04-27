@@ -69,13 +69,24 @@
 			{
 				if($_REQUEST['password']==$result[0]['cus_pass'] && $_REQUEST['email']==$result[0]['cus_email'])
 				{
-					$_SESSION['data']=$result[0];
+					
+					if($result[0]['cus_status']==1){
+
+						$this->session->set_flashdata('msg',"You are banned");
+                	
+                		$this->session->set_flashdata('class',"warning");
+
+                		return redirect('login');
+					}
+					else
+					{
+						$_SESSION['data']=$result[0];
 						
 
-					$_SESSION['data']['customer']=$_SESSION['data'];
+						$_SESSION['data']['customer']=$_SESSION['data'];
 
-					return redirect('');
-					
+						return redirect('');
+					}
 				}
 				else
 				{

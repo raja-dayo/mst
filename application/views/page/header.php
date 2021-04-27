@@ -97,11 +97,15 @@ s0.parentNode.insertBefore(s1,s0);
     <!-- Stylesheets & Fonts -->
     <link href="<?php echo base_url('asset/css/plugins.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/css/style.css')?>" rel="stylesheet">
+
+     <input type="hidden" name="u_date" value="<?=date('Y-m-d H:i:s', time())?>">
 </head>
 
 <body>
 
-    <!-- Body Inner -->
+    
+   
+     <!-- Body Inner-->
     <div class="body-inner">
       <!-- Topbar -->
         <div id="topbar" class="topbar-fullwidth d-none d-lg-block">
