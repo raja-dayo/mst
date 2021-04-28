@@ -72,7 +72,8 @@
 					
 					if($result[0]['cus_status']==1){
 
-						$this->session->set_flashdata('msg',"You are banned");
+
+						$this->session->set_flashdata('msg','You are ban');
                 	
                 		$this->session->set_flashdata('class',"warning");
 

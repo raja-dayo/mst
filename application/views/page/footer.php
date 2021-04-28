@@ -16,6 +16,7 @@
 		</div>-->
 		
     <div class="mob-footer container">
+    	
 				<div class="toggle accordion accordion-shadow">
 					<div class="ac-item">
 						<h5 class="ac-title">About US</h5>
@@ -76,6 +77,7 @@
 				<div class="copyright-text text-center col-lg-12">&copy; 2020 MysleepingTabs.com All Rights Reserved.</div>
 		</div>
     <footer id="footer" class="inverted">
+
       <div class="footer-content">
         <div class="container">
           <div class="row">
@@ -173,10 +175,11 @@
         </div>
       </div>
 
-      <input type="hidden" name="u__date" value="<?=date('Y-m-d H:i:s', time())?>">
       
-      <div class="copyright-content">
+      
+       <div class="copyright-content">
 			<div class="container">
+				
 				<div class="copyright-text text-center">© <?php echo date('Y',time())?> MysleepingTabs.com All Rights Reserved.</div>
 			</div>
 		</div>

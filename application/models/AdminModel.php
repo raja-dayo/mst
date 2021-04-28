@@ -582,9 +582,11 @@
 			return ($result ? true: false);
 		}
 
-		public function banCus($id){
+		public function banCus($id, $msg){
 
 			$this->db->set('cus_id', $id);
+
+			$this->db->set('message', $msg);
 			
 			$this->db->set('ban_on', date('Y-m-d H:i:s', time()));
 
@@ -610,6 +612,8 @@
 			$this->db->where('cus_id',$id);
 
 			$this->db->set('cus_status', '0');
+
+			$this->db->set('message', '');
 
 			$result=$this->db->update('customers');
 		}

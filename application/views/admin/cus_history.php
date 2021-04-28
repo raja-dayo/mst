@@ -37,17 +37,15 @@
                 <div class="card-body">
 					<h4 class="card-title">Data table</h4>
                 	<div class="template-demo">
-                    	<button type="button" class="btn btn-outline-primary btn-icon-text">
-                      		<i class="ti-file btn-icon-prepend"></i>
-                      		Block
+                    	<button type="button" class="btn btn-primary btn-icon-text" <?=($orders[0]['cus_status']==1 ? 'disabled':'');?> data-toggle="modal" data-target="#banModal" data-whatever="@mdo" id="ban"> 
+                      		
+                      		Ban
                     	</button>
                     	
 
-                        <button type="button" class="btn btn-danger btn-icon-text" id="ban" value="<?=$orders[0]['cus_status']?>">
+                        <button type="button" class="btn btn-danger btn-icon-text ban" <?=($orders[0]['cus_status']==0 ? 'disabled':'');?> value="<?=$orders[0]['cus_status']?>">
                           <i class="ti-alert btn-icon-prepend"></i>                                                    
-                          <?php
-                          	echo ($orders[0]['cus_status']==1 ? 'Unban':'Ban');
-                          ?>
+                          Unban
                         </button>
                         <button type="button" class="btn btn-outline-success btn-icon-text" data-toggle="modal" data-target="#updateCus" data-whatever="@mdo"><i class="ti-upload btn-icon-prepend"></i>                                                    
                           Update</button>
@@ -62,7 +60,7 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-4 grid-margin">
-            <div class="card">
+            <div class="card" id="tbl_1">
             	<div class="card-body">
 					<div class="py-4">
                         <p class="clearfix">
@@ -345,7 +343,32 @@
       		</div>
     	</div>
   	</div>
-		  
+	
+  	<div class="modal fade" id="banModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+	  		<div class="modal-content">
+	      		<div class="modal-header">
+	        		<h5 class="modal-title " id="exampleModalLabel">Message</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+	      		</div>
+		        <div class="modal-body">
+		        	<form>
+		          		<div class="form-group">
+		            		<textarea class="form-control" rows="5" name="msg" id="msg"></textarea>
+		          		</div>
+		          		
+		        	</form>
+		        </div>
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        		<button type="button" class="btn btn-primary ban"  data-dismiss="modal">Ok</button>
+	      		</div>
+	    	</div>
+	   </div>
+	</div>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"            aria-hidden="true">
 		<div class="modal-dialog" role="document">
 	  		<div class="modal-content">
@@ -456,6 +479,7 @@
 							<thead>
 								<tr>
 									<th>No</th>
+									<th>Message</th>
 									<th>Ban On</th>
 									<th>Ban Off</th>
 									
@@ -467,6 +491,7 @@
 						    			?>
 						    				<tr>
 						    					<td><?=$key?></td>
+						    					<td><?=$value['message']?></td>
 						    					<td><?=$value['ban_on']?></td>
 						    					<td><?=$value['ban_update']?></td>
 						    				</tr>
@@ -536,22 +561,27 @@
             	data:{cus_id, fname, lname, email, phone, add, city, state, country, zipcode},
             	success:function(responce){
 
+            		$("#tbl_1").load(" #tbl_1");
             		//alert(responce);
-            		location.reload(true);
+            		//location.reload(true);
             	},
             });
         });
 
-        $("#ban").click(function(){
+        $(".ban").click(function(){
 
+        	var  msg   =$("#msg").val();
+        	
         	var cus_id = "<?=$orders[0]['cus_id']?>";
-        	var status = $(this).val();
+        	
+        	var status = "<?=$orders[0]['cus_status']?>" //$(this).val();
+        	
         	
         	$.ajax({
 
         		url:"<?=base_url().'admin/banAction'?>",
         		type:"POST",
-        		data:{cus_id, status},
+        		data:{cus_id, status, msg},
         		success:function(responce){
 
         			location.reload(true);

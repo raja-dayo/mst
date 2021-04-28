@@ -991,6 +991,7 @@
 		public function users(){
 
 			$data['customers']=$this->Admin->custoemsModel();
+			
 			$this->load->view('admin/manage_users',$data);
 		}
 
@@ -1067,7 +1068,7 @@
 			}
 			else
 			{
-				$result=$this->Admin->banCus($_REQUEST['cus_id']);
+				$result=$this->Admin->banCus($_REQUEST['cus_id'], $_REQUEST['msg']);
 				
 				if($result){
 					echo "You are ban for some time";
@@ -1076,8 +1077,7 @@
 					echo "something is wrong";
 				}
 			}
-		// 	echo "<pre>";
-		// 	print_r($_REQUEST);
-		 }
+		
+		}
 	}
 ?>

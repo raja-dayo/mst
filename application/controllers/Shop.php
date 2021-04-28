@@ -319,8 +319,8 @@
 		
 		public function contact_us()
 		{
-			echo basename($_SERVER['REQUEST_URI']);
-			//$this->load->view("page/contact");	
+			//echo basename($_SERVER['REQUEST_URI']);
+			$this->load->view("page/contact");	
 		}
 		
 		public function category($cat_name){
@@ -678,22 +678,26 @@
 
 			$result=$this->Shop->addCustomer($_REQUEST['b_info']);
 			
-			$_SESSION['cus']['info']=$result[0];
 			
-			if($_SESSION['cus']['info']['cus_status']==1){
+			
+			if($result[0]['cus_status']==1){
 
 				unset($_SESSION['bit_discount']);
+				
 				unset($_SESSION['bank_discount']);
+				
 				unset($_SESSION['ss_id']);
 				
 				$this->cart->destroy();
 
-				$this->session->set_flashdata('msg','acb');
+				//$this->session->set_flashdata('msg',$result[0]['message']);
 
 				return redirect('ban');
 			}
 			else
 			{
+				$_SESSION['cus']['info']=$result[0];
+
 				$link=random_string('alnum', 64);
 			
 				$data=array(
@@ -1179,7 +1183,14 @@
 
 		function banPage(){
 
-			$this->load->view('page/ban');
+			if($_SERVER['HTTP_REFERER'] == 'http://localhost/mysleepingtab/checkout'){
+
+				$this->load->view('page/ban');
+			}else{
+
+				return redirect("");
+			}
+			
 		}
 	}
 ?>

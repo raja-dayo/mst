@@ -98,7 +98,9 @@ s0.parentNode.insertBefore(s1,s0);
     <link href="<?php echo base_url('asset/css/plugins.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/css/style.css')?>" rel="stylesheet">
 
-     <input type="hidden" name="u_date" value="<?=date('Y-m-d H:i:s', time())?>">
+     
+
+     <label style="display: none;"><?=date('Y-m-d H:i:s', time())?></label>
 </head>
 
 <body>
