@@ -5,8 +5,20 @@
 	 <!-- Section -->
         <section>
             <div class="container">
+
+                <div class="breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="<?=base_url()?>"><i class="fa fa-home"></i></a> </li>
+                        
+                            <li class="breadcrumb-item">FAQ'S</li>
+                            <!--<li class="breadcrumb-item active" aria-current="page">Data</li>-->
+                        </ol>
+                    </nav>
+                </div>
                 <div class="row">
-						<div class="heading-text heading-section">
+                    <?=$page[0]['page_content'];?>
+						<!-- <div class="heading-text heading-section">
 							<h1>FAQ’s Frequently Asked Questions <small>(9)</small></h1>
 						<div>
                         <div class="accordion toggle fancy radius clean">
@@ -46,7 +58,7 @@
                                 <h5 class="ac-title"><i class="fa fa-question-circle"></i>How do I contact you ?</h5>
                                 <div style="display: none;" class="ac-content">You can contact us via Whatsapp on the number given on top of the website. You can contact us via email and online chat as well.</div>
                             </div>
-                        </div>
+                        </div> -->
                 </div>
             </div>
         </section>
@@ -55,3 +67,6 @@
 	
 	require_once('footer.php');
 ?>
+</body>
+
+</html>

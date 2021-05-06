@@ -4,208 +4,150 @@
     require_once('header.php');
 ?>
        
-        <!-- WELCOME -->
-        <section id="welcome" class="p-b-0">
-            <div class="container">
-                <div class="heading-text heading-section text-center m-b-40">
-                    <h1>Buy Medicine online Supplier of top <br> <span style="color:#20ad96; font-weight:400;">sleeping pills</span> and <span style="color:#20ad96; font-weight:400;">pain killers</span></h1>
-                    <span class="lead">Welcome to My Sleeping Tabs!</span><br><br>
-					
-					<p>If you are here, you may not be in good health and might be facing some serious sleeping issues. Well! Do not worry, we are at your service. We take pride in our work and look forward to be your only “click” in the time of distress.</p>
-					<p>My Sleeping Tabs is an online pharmacy that operates across United Kingdom. Pills we keep are manufactured out of standard formula. Quality and authenticity of our kept medicines cannot be challenged at all. We make sure that the whole process remains entirely transparent. Our products will provide you an immediate relief from depression, anxiety, distress, restlessness, narcolepsy, insomnia and numerous other sleeping disorders. In the contemporary world, various issues related to mental health and sleep are emerging. Such issues need to be tackled at early stage or else they become intense and do not allow their victims to lead a normal life. That is where our service comes in!</p>
-					<p>We offer medicines such as AMBEIN (10mg), TEMAZEPAM (20mg), XANAX (2mg) and VALIUM (10mg). Valium, also called as Diazepam, is most of the times used to cure sleeping disorders and anxiety. Alcohol addicts, who try to withdraw from their drinking habit also use valium. Ambien also comes as Zolpidem (10mg). These tablets are amongst top brands of sleeping pills and are used at global level. Alprazolam 2mg bars and Xanax are potentially similar not only in their nature but also in their function. These tablets provide sudden relief in the time of need. Temazepam, as well, is used a tablet being used at worldwide level. All these tablets are authorized and made out of quality process.</p>
-					<div class="col-12">
-                        <a href="<?php echo base_url('product/buy-valium/')?>" type="button" class="btn btn-primary btn-lg">Buy Now</a>
+<!-- WELCOME -->
+<section id="welcome" class="p-b-0">
+    <div class="container">
+        <div class="heading-text heading-section text-center m-b-40">
+            <h1>Buy Medicine online Supplier of top <br> 
+                <span style="color:#20ad96; font-weight:400;">sleeping pills</span> 
+                and 
+                <span style="color:#20ad96; font-weight:400;">pain killers</span>
+            </h1>
+            <span class="lead">Welcome to My Sleeping Tabs!</span>
+            <br><br>
+			
+			<p>If you are here, you may not be in good health and might be facing some serious sleeping issues. Well! Do not worry, we are at your service. We take pride in our work and look forward to be your only “click” in the time of distress.</p>
+			<p>My Sleeping Tabs is an online pharmacy that operates across United Kingdom. Pills we keep are manufactured out of standard formula. Quality and authenticity of our kept medicines cannot be challenged at all. We make sure that the whole process remains entirely transparent. Our products will provide you an immediate relief from depression, anxiety, distress, restlessness, narcolepsy, insomnia and numerous other sleeping disorders. In the contemporary world, various issues related to mental health and sleep are emerging. Such issues need to be tackled at early stage or else they become intense and do not allow their victims to lead a normal life. That is where our service comes in!</p>
+			<p>We offer medicines such as AMBEIN (10mg), TEMAZEPAM (20mg), XANAX (2mg) and VALIUM (10mg). Valium, also called as Diazepam, is most of the times used to cure sleeping disorders and anxiety. Alcohol addicts, who try to withdraw from their drinking habit also use valium. Ambien also comes as Zolpidem (10mg). These tablets are amongst top brands of sleeping pills and are used at global level. Alprazolam 2mg bars and Xanax are potentially similar not only in their nature but also in their function. These tablets provide sudden relief in the time of need. Temazepam, as well, is used a tablet being used at worldwide level. All these tablets are authorized and made out of quality process.</p>
+			<div class="col-12">
+                <a href="<?php echo base_url('product/buy-valium/')?>" type="button" class="btn btn-primary btn-lg">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="background-grey">
+    <div class="container">
+        <div class="shop">
+            <div class="grid-layout grid-4-columns grid-loaded" data-item="grid-item">
+                <div class="grid-item">
+                    <div class="product">
+                        <div class="product-image">
+                            <a href="<?php echo base_url().'product/buy-valium/'?>">
+                                <img alt="Buy VAlIUM 10MG" title="Buy VAlIUM 10MG" src="https://www.mysleepingtabs.com/asset/images/product/df1szpzhyg821-e16052129757571.jpg">
+                            </a>
+                           
+                        </div>
+                        <div class="product-description text-center">
+                            <div class="product-title">
+                                <h3><a href="<?php echo base_url().'product/buy-valium/'?>">Buy VAlIUM 10MG</a></h3>
+                            </div>
+                            
+                            <a href="<?php echo base_url().'product/buy-valium/'?>" class="btn btn-inverted">Buy Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- end: WELCOME -->
-         <!-- WHAT WE DO -->
-        <section class="background-grey">
-            <div class="container">
                 
-                <!--Product list-->
-                <div class="shop">
-                    <div class="grid-layout grid-4-columns grid-loaded" data-item="grid-item">
-                        <div class="grid-item">
-                            <div class="product">
-                                <div class="product-image">
-                                    <a href="<?php echo base_url().'product/buy-valium/'?>">
-                                        <img alt="Buy VAlIUM 10MG" title="Buy VAlIUM 10MG" src="https://www.mysleepingtabs.com/asset/images/product/df1szpzhyg821-e16052129757571.jpg">
-                                    </a>
-                                    <!--<div class="product-overlay">
-                                        <a href="<?php echo base_url().'product/buy-valium/'?>" data-lightbox="ajax">Quick View</a>
-                                    </div>-->
-                                </div>
-                                <div class="product-description text-center">
-
-                                    <div class="product-title">
-                                        <h3><a href="<?php echo base_url().'product/buy-valium/'?>">Buy VAlIUM 10MG</a></h3>
-                                    </div>
-                                    <div class="product-price"><!--<ins>$196.50 | $65.50</ins>-->
-                                    </div>
-                                    <!--<div class="product-rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>-->
-                                    <a href="<?php echo base_url().'product/buy-valium/'?>" class="btn btn-inverted">Buy Now</a>
-                                </div>
-                            </div>
+                <div class="grid-item">
+                    <div class="product">
+                        <div class="product-image">
+                            <a href="<?php echo base_url().'product/xanax-2mg/'?>"><img alt="Buy XANAX 2MG" title="Buy XANAX 2MG" src="<?php echo base_url().'asset/images/product/Xanax.jpg'?>">
+                            </a>
+                            
                         </div>
-                        
-                        <div class="grid-item">
-                            <div class="product">
-                                <div class="product-image">
-                                    <a href="<?php echo base_url().'product/xanax-2mg/'?>"><img alt="Buy XANAX 2MG" title="Buy XANAX 2MG" src="<?php echo base_url().'asset/images/product/Xanax.jpg'?>">
-                                    </a>
-                                    <!--<div class="product-overlay">
-                                        <a href="<?php echo base_url().'/product/xanax-2mg/'?>" data-lightbox="ajax">Quick View</a>
-                                    </div>-->
-                                </div>
-                                <div class="product-description text-center">
+                        <div class="product-description text-center">
 
-                                    <div class="product-title">
-                                        <h3><a href="<?php echo base_url().'product/xanax-2mg/'?>">Buy XANAX 2MG</a></h3>
-                                    </div>
-                                    <div class="product-price"><!--<ins>$203.05 | $465.05</ins>-->
-                                    </div>
-                                    <!--<div class="product-rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>-->
-                                    <a href="<?php echo base_url().'product/xanax-2mg/'?>" class="btn btn-inverted">Buy Now</a>
-                                    
-                                </div>
+                            <div class="product-title">
+                                <h3><a href="<?php echo base_url().'product/xanax-2mg/'?>">Buy XANAX 2MG</a></h3>
                             </div>
+                            <a href="<?php echo base_url().'product/xanax-2mg/'?>" class="btn btn-inverted">Buy Now</a>
                         </div>
-                        
-                        <div class="grid-item">
-                            <div class="product">
-                                <div class="product-image">
-                                    <a href="<?php echo base_url().'product/temazepam-20-mg-online/'?>">
-                                       <img alt="Buy TEMAZEPAM 20MG" title="Buy TEMAZEPAM 20MG" src="<?php echo base_url().'asset/images/product/tamazepam.jpg'?>">
-                                    </a>
-                                    <!--<div class="product-overlay">
-                                        <a href="<?php echo base_url().'/product/temazepam-20-mg-online/'?>" data-lightbox="ajax">Quick View</a>
-                                    </div>-->
-                                </div>
-                                <div class="product-description text-center">
+                    </div>
+                </div>
+                
+                <div class="grid-item">
+                    <div class="product">
+                        <div class="product-image">
+                            <a href="<?php echo base_url().'product/temazepam-20-mg-online/'?>">
+                               <img alt="Buy TEMAZEPAM 20MG" title="Buy TEMAZEPAM 20MG" src="<?php echo base_url().'asset/images/product/tamazepam.jpg'?>">
+                            </a>
+                            
+                        </div>
+                        <div class="product-description text-center">
 
-                                    <div class="product-title">
-                                        <h3><a href="<?php echo base_url().'product/temazepam-20-mg-online/'?>">Buy TEMAZEPAM 20MG</a></h3>
-                                    </div>
-                                    <div class="product-price"><!--<ins>$196.50 | $65.50</ins>-->
-                                    </div>
-                                    <!--<div class="product-rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>-->
-                                    <a href="<?php echo base_url().'product/temazepam-20-mg-online/'?>" class="btn btn-inverted">Buy Now</a>
-                                </div>
+                            <div class="product-title">
+                                <h3><a href="<?php echo base_url().'product/temazepam-20-mg-online/'?>">Buy TEMAZEPAM 20MG</a></h3>
                             </div>
+                            
+                           <a href="<?php echo base_url().'product/temazepam-20-mg-online/'?>" class="btn btn-inverted">Buy Now</a>
                         </div>
-                        
-                        <div class="grid-item">
-                            <div class="product">
-                                <div class="product-image">
-                                    <a href="<?php echo base_url().'product/buy-ambien-10mg/'?>">
-                                        <img alt="Buy AMBIEN 10MG" title="Buy AMBIEN 10MG" src="<?php echo base_url().'asset/images/product/zolpidem.jpg'?>">
-                                    </a>
-                                    <!--<div class="product-overlay">
-                                        <a href="<?php echo base_url().'/product/temazepam-20-mg-online/'?>" data-lightbox="ajax">Quick View</a>
-                                    </div>-->
-                                </div>
-                                <div class="product-description text-center">
+                    </div>
+                </div>
+                
+                <div class="grid-item">
+                    <div class="product">
+                        <div class="product-image">
+                            <a href="<?php echo base_url().'product/buy-ambien-10mg/'?>">
+                                <img alt="Buy AMBIEN 10MG" title="Buy AMBIEN 10MG" src="<?php echo base_url().'asset/images/product/zolpidem.jpg'?>">
+                            </a>
+                        </div>
+                        <div class="product-description text-center">
 
-                                    <div class="product-title">
-                                        <h3><a href="<?php echo base_url().'product/buy-ambien-10mg/'?>">Buy AMBIEN 10MG</a></h3>
-                                    </div>
-                                    <div class="product-price"><!--<ins>$196.50 | $65.50</ins>-->
-                                    </div>
-                                    <!--<div class="product-rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>-->
-                                    <a href="<?php echo base_url().'product/buy-ambien-10mg/'?>" class="btn btn-inverted">Buy Now</a>
-                                </div>
+                            <div class="product-title">
+                                <h3><a href="<?php echo base_url().'product/buy-ambien-10mg/'?>">Buy AMBIEN 10MG</a></h3>
                             </div>
+                            
+                          <a href="<?php echo base_url().'product/buy-ambien-10mg/'?>" class="btn btn-inverted">Buy Now</a>
                         </div>
-                        
-                        
-                        
-                        
+                    </div>
                 </div>
             </div>
-        </section>
-        <!-- END WHAT WE DO -->
-		 <!-- Testimonial Carousel -->
-        <section class="background-grey">
-        
-            <div class="container">
-                <div class="trustpilotHeading">
-                    <span class="trustpilotReviews">Customer Reviews on</span>
-                    <img src="<?php echo base_url('asset/images/trustpilot-logo.png')?>" class="img-fluid rounded" alt="">
-                    <span class="trustpilotScore">Trust Score 9.9 | 347 reviews</span>
-                </div>
+        </div>
+    </div>
+</section>
+   
+<section class="background-grey">
+    <div class="container">
+        <div class="trustpilotHeading">
+            <span class="trustpilotReviews">Customer Reviews on</span>
+            <img src="<?php echo base_url('asset/images/trustpilot-logo.png')?>" class="img-fluid rounded" alt="">
+            <span class="trustpilotScore">Trust Score 9.9 | 347 reviews</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="carousel equalize testimonial testimonial-box" data-margin="20" data-arrows="false" data-items="3"              data-items-sm="2" data-items-xxs="1" data-equalize-item=".testimonial-item">
+                        
+            <div class="testimonial-item">
+               <img src="<?php echo base_url().'asset/images/m-1.jpg'?>" alt="">
+                <p>Great service. Always quick to reply. The product is top quality. Really recommend this site 👍🏻</p>
+                <span>Frances J. Hill</span>
             </div>
-            
-            <div class="container">
-                <!-- Testimonials -->
-                <div class="carousel equalize testimonial testimonial-box" data-margin="20" data-arrows="false" data-items="3" data-items-sm="2" data-items-xxs="1" data-equalize-item=".testimonial-item">
-                    <!-- Testimonials item -->
-                    <div class="testimonial-item">
-                       <img src="<?php echo base_url().'asset/images/m-1.jpg'?>" alt="">
-                        <p>Great service. Always quick to reply. The product is top quality. Really recommend this site 👍🏻</p>
-                        <span>Frances J. Hill</span>
-                    </div>
-                    <!-- end: Testimonials item-->
-                    <!-- Testimonials item -->
-                    <div class="testimonial-item">
-                        <img src="<?php echo base_url().'asset/images/m-2.png'?>" alt="">
-                        <p>Ed replied & very quickly really good exactly what i ordered, came very quickly , good quality , top marks Ed will order again soon</p>
-                        <span>Claudia Hunl</span>
-                    </div>
-                    <!-- end: Testimonials item-->
-                    <!-- Testimonials item -->
-                    <div class="testimonial-item">
-                        <img src="<?php echo base_url().'asset/images/m-3.png'?>" alt="">
-                        <p>Ordering AGAIN! Good service, timely response and great product! Definitely recommend.</p>
-                        <span>Lucky VB</span>
-                    </div>
-                    <!-- end: Testimonials item-->
-                    <!-- Testimonials item -->
-                    <div class="testimonial-item">
-                        <img src="<?php echo base_url().'asset/images/m-4.png'?>" alt="">
-                        <p>Amazing products Amazing service Amazing delivery service Thank you</p>
-                        <span>Brian Walsh</span>
-                    </div>
-                    <!-- end: Testimonials item-->
-                    <!-- Testimonials item -->
-                    <div class="testimonial-item">
-                        <img src="<?php echo base_url().'asset/images/m-8.jpg'?>" alt="">
-                        <p>Last time I used I remember the order taking slightly longer than promised..... but did arrive and good quality. Does anyone have a definitive on how long the order actually takes to arrive.</p>
-                        <span>Phil Smith</span>
-                    </div>
-                    <!-- end: Testimonials item-->
-                </div>
-                <!-- end: Testimonials -->
-                </div>
-                <!-- end: Testimonials -->
+                        
+            <div class="testimonial-item">
+                <img src="<?php echo base_url().'asset/images/m-2.png'?>" alt="">
+                <p>Ed replied & very quickly really good exactly what i ordered, came very quickly , good quality , top marks Ed will order again soon</p>
+                <span>Claudia Hunl</span>
             </div>
-        </section>
+                        
+            <div class="testimonial-item">
+                <img src="<?php echo base_url().'asset/images/m-3.png'?>" alt="">
+                <p>Ordering AGAIN! Good service, timely response and great product! Definitely recommend.</p>
+                <span>Lucky VB</span>
+            </div>
+                        
+            <div class="testimonial-item">
+                <img src="<?php echo base_url().'asset/images/m-4.png'?>" alt="">
+                <p>Amazing products Amazing service Amazing delivery service Thank you</p>
+                <span>Brian Walsh</span>
+            </div>
+                        
+            <div class="testimonial-item">
+                <img src="<?php echo base_url().'asset/images/m-8.jpg'?>" alt="">
+                <p>Last time I used I remember the order taking slightly longer than promised..... but did arrive and good quality. Does anyone have a definitive on how long the order actually takes to arrive.</p>
+                <span>Phil Smith</span>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- end: Testimonial Carousel -->
 		 <section id="welcome" class="p-b-0">
             <div class="container">
@@ -236,6 +178,9 @@
     
     require_once('footer.php');
 ?>
+</body>
+
+</html>
 
 
 

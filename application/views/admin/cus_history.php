@@ -236,7 +236,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<!--<div class="row">
     	<div class="col-lg-12 grid-margin stretch-card">
       		<div class="card">
         		<div class="card-body">
@@ -308,7 +308,7 @@
        			</div>
       		</div>
     	</div>
-  	</div>
+  	</div>-->
 		  
   	<div class="row">
 		<div class="col-lg-12 grid-margin stretch-card">
@@ -318,7 +318,7 @@
 		          <div class="table-responsive">
 		            <table class="table table-bordered text-center">
 		              <thead>
-		                <tr>
+		                <tr class="bg-dark text-white">
 		                  <th>Total</th>
 		                  <th>Poor</th>
 		                  <th>BAD</th>
@@ -475,9 +475,9 @@
 				<div class="card-body">
 					<h4 class="card-title">Ban History</h4>
 					<div class="table-responsive">
-						<table id="order-listing" class="table">
+						<table id="order-listing" class="table table-bordered text-center">
 							<thead>
-								<tr>
+								<tr class="bg-dark text-white">
 									<th>No</th>
 									<th>Message</th>
 									<th>Ban On</th>

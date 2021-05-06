@@ -1079,5 +1079,41 @@
 			}
 		
 		}
+
+		public function updatePageData(){
+
+			$result=$this->Admin->updatePage($_REQUEST);
+			
+			if($result){
+				echo 'Page Data Updated';
+			}else{
+				echo "Something going wrong";
+			}
+		}
+
+		public function updateMulOrderStatus(){
+
+			if ($_REQUEST['value']=='o_pro') {
+				
+				$status=2;
+			}
+			else if($_REQUEST['value']=='o_com'){
+				$status=3;
+			}
+			
+			foreach ($_REQUEST['order_id'] as $key => $od) {
+								
+				$result=$this->Admin->updateOrdertStatus($od, $status);				
+			}
+			
+			if($result)
+			{
+				echo "Order Status Updated";
+			}
+			else
+			{
+				echo "Something wrong";
+			}	
+		}
 	}
 ?>

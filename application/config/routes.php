@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] 		= 'Shop';
 $route['page/(:any)'] 				= 'Shop/page/$1';
 $route['about-us'] 					= 'Shop/about_us'; 
+$route['faqs'] 						= 'Shop/faqs'; 
 $route['ban']						='shop/banPage';
 $route['447563084792']				='login/admin_login';
 $route['forgot_password'] 			= 'Shop/forgot_password';
@@ -72,7 +73,7 @@ $route['terms-conditions']			='Shop/terms_conditions';
 $route['product-category/(:any)']	='Shop/category/$1';
 $route['product/(:any)']		 	= "shop/product_details/$1";
 $route['buy-valium-online'] 		= 'Shop/buy_valium_online'; 
-$route['(:any)']					="Shop/blog_details/$1";
+$route['blog/(:any)']				="Shop/blog_details/$1";
 
 
 /*$route['privacy-policy']		= 'Shop/privacy_policy';

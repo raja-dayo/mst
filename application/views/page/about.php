@@ -4,10 +4,21 @@
 ?>
 	  <section>
             <div class="container">
+                <div class="breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="<?=base_url()?>"><i class="fa fa-home"></i></a> </li>
+                    
+                        <li class="breadcrumb-item">About Us</li>
+                        <!--<li class="breadcrumb-item active" aria-current="page">Data</li>-->
+                    </ol>
+                </nav>
+            </div>
                 <div class="row">
                     <div class="col">
                         <div class="heading-text heading-section">
-                            <h1 class="main-heading">About us</h1>
+                            <?php echo $page[0]['page_content'];?>
+                            <!--<h1 class="main-heading">About us</h1>
 							<p>We are a business, operating an online pharmacy on the world wide web. We are not selling fakes or scamming people, there is a whole process to it. We only sell BRAND or equally potent GENERICS, we are not selling anything that is manufactured in an underground lab or is bunk. We sell genuine products that are made to treat anxiety, stress, depression, insomnia etc. For us our customers are dear and important, their health and safety in doing business with us is our utmost priority. In any case, we will not JEOPARDIZE the trust instilled upon us. We do have high standards of customer services to ensure each and everyone is treated with care and humbleness. Most of our clients are our friends and that is how we like to do business.</p>
                             <p>If you have any complains, suggestions, queries etc. please shoot us an email DO NOT HESITATE. We love hearing from you guys ! but having said that we want you guys to directly inquire from us rather then going on and posting on forums that are biased and in favor of pharmacies run by their own admins. Yes, most forums talking about drugs are guiding customers towards buying from their own pharmacies by posting false, heinous and misleading feedback regarding most legitimate vendors. Most of these forums promote websites that are selling the exact same brand and generics that we are selling. Before posting questions about our credibility, ask us and use google. You will find enough feedback to confirm our legitimacy.</p>
 							<h4>Our Speciality</h4>
@@ -19,14 +30,17 @@
                             <p>We also maintain high customer treating standards as we deal with each and every customer with equal respect and empathy. For any query, do not hesitate to write us. We appreciate your remarks, recommendations as well as positive criticism. My sleeping tabs never lets down its customers and always works hard to keep up your trust that you have proudly vested in us!</p>
                             <p>We wish you a hale and healthy life.</p>
                             <p>Thanks</p>
-                            <p>Mysleepingtabs.com</p>
+                            <p>Mysleepingtabs.com</p>-->
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
         
 <?php 
 	
 	require_once('footer.php');
 ?>
+</body>
+
+</html>

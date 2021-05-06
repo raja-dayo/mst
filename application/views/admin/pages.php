@@ -18,9 +18,10 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                  </div>
+                </div>
             </div>
           </div>    
+         
       
            
           
@@ -126,7 +127,21 @@
 
 			var p_id = $("#p_id").val();	
 			var des  =$(".card-block").html()
-			//alert(p_id+" "+des);
+			
+      $.ajax({
+
+        url:"<?php echo base_url().'admin/updatePageData'?>",
+        type:'POST',
+        data:{p_id, des},
+        success:function(result){
+
+          
+            location.reload();
+            alert(result);
+
+          
+        },
+      });
 		})
 	});
 </script>

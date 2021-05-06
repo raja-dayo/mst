@@ -11,6 +11,13 @@
 			
 			return ($result ? true: false);
 		}
+
+		function cus_reviews($cus_id){
+
+			$this->db->where('cus_id',$cus_id);
+			$result=$this->db->get('reviews');
+			return $result->result_array();
+		}
 	}
 
 ?>

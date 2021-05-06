@@ -25,20 +25,23 @@
         <?php
 
             if($product[0]['pro_is_brand']==0){
-                
+                    
+                $arr     =explode(" ",$product[0]['cat_name']);
+                $c_title =strtolower(implode("-",$arr));
+
                 ?>
                     <section id="product-page" class="product-page py-2">
                         <div class="container">
-                            <!--<div class="breadcrumb">
+                            <div class="breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li><a href="#"><i class="fa fa-home"></i></a> </li>
-                                        <li class="breadcrumb-item"><a href="#">Portfolio</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Library</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                        <li><a href="<?=base_url()?>"><i class="fa fa-home"></i></a> </li>
+                                        <li class="breadcrumb-item"><a href='<?php echo base_url()."product-category/$c_title/"?>'><?php echo ucwords($product[0]['cat_name']);?></a></li>
+                                        <li class="breadcrumb-item"><?php echo ucwords($product[0]['pro_full_name']);?></li>
+                                        <!--<li class="breadcrumb-item active" aria-current="page">Data</li>-->
                                     </ol>
                                 </nav>
-                            </div>-->
+                            </div>
                             <div class="m-t-20">
                                 
                                     <h1 class='main-heading'><?php echo ucwords($product[0]['pro_full_name']);?></h1>
@@ -605,3 +608,6 @@
         });
     });
 </script>
+</body>
+
+</html>

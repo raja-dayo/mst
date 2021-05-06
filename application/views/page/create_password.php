@@ -73,4 +73,7 @@
                 }       
             });
         });
-    </script>
+</script>
+</body>
+
+</html>

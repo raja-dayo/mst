@@ -16,6 +16,16 @@
 <!-- CONTENT -->
 <section>
   <div class="container m-b-40">
+     <div class="breadcrumb">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li><a href="<?=base_url()?>"><i class="fa fa-home"></i></a> </li>
+            
+                <li class="breadcrumb-item">Contact Us</li>
+                <!--<li class="breadcrumb-item active" aria-current="page">Data</li>-->
+            </ol>
+        </nav>
+    </div>
     <div class="row">
       <div class="col-lg-12">
         <div class="heading-text heading-section">
@@ -242,3 +252,6 @@ function removeSpaces(string) {
         });
     });
 </script>
+</body>
+
+</html>

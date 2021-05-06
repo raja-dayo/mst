@@ -9,37 +9,25 @@
 		
         <section>
             <div class="container">
-			
+				
+            	 <div class="breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="<?=base_url()?>"><i class="fa fa-home"></i></a> </li>
+                        
+                            <li class="breadcrumb-item"><?php echo $products[0]['cat_name'];?></li>
+                            <!--<li class="breadcrumb-item active" aria-current="page">Data</li>-->
+                        </ol>
+                    </nav>
+                </div>
+
                <div class="row m-b-20">
                     <div class="col">
                         <h1 class="m-b-20"><?php echo $products[0]['cat_name'];?></h1>
                         <p>All the <?php echo $products[0]['cat_name'];?> are listed in this category</p>
                     </div>
                 </div>
-				<!--<div class="row m-b-40 align-middle">
-					<div class="col-md-8">
-                        <div class="order-select">
-                           <div class="row">
-								<div class="col-lg-5">
-									<h6>Showing all 8 results out of 150</h6>
-								</div>
-								
-								<div class="col-lg-2">
-									<form method="get">
-										<select class="form-control">
-											<option value="8" selected="selected">8</option>
-											<option value="20">20</option>
-											<option value="60">60</option>
-											<option value="100">100</option>
-										</select>
-									</form>
-								</div>
-							</div>
-                        </div>
-                    </div>
-                  
-				</div>-->
-                <!--Product list-->
+			
                 <div class="shop">
                     <div class="grid-layout grid-4-columns" data-item="grid-item">
                         
@@ -98,3 +86,6 @@
 	require_once('footer.php');
 
 ?>
+</body>
+
+</html>

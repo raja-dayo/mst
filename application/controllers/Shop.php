@@ -248,7 +248,10 @@
 		}
 		public function about_us()
 		{	
-			$this->load->view("page/about");	
+			
+			$data['page']= $this->session->flashdata('page_data');
+			
+			$this->load->view("page/about",$data);	
 		}
 
 		public function bitcoin(){
@@ -261,8 +264,9 @@
 		}
 		
 		public function faqs()
-		{
-			$this->load->view("page/faqs");	
+		{	
+			$data['page']= $this->session->flashdata('page_data');
+			$this->load->view("page/faqs",$data);	
 		}
 
 		public function blog(){
@@ -313,7 +317,6 @@
 			
 			$data['posts']=$this->Shop->postList($config['per_page'],$this->uri->segment(2));
 			
-			
 			$this->load->view("page/blog",$data);
 		}
 		
@@ -348,7 +351,9 @@
 
 		public function terms_conditions()
 		{
-			$this->load->view("page/term_condition");	
+			$data['page']= $this->session->flashdata('page_data');
+
+			$this->load->view("page/term_condition",$data);	
 		}
 
 		public function privacy_policy(){
@@ -1128,7 +1133,7 @@
 		
 		public function add_review(){
 
-			if(!isset($_REQUEST['star-selector'])){
+			if(!isset($_REQUEST['star_selector'])){
 
 				$this->session->set_flashdata('msg', 'Please select rating star');
 
@@ -1147,7 +1152,7 @@
 				"title"			=> $_REQUEST['title'],
 				"review"		=> $_REQUEST['review'],
 				"od_id"			=> $_REQUEST['od_id'],
-				"rating"		=> $_REQUEST['star-selector'],
+				"rating"		=> $_REQUEST['star_selector'],
 				"create_on"		=> date('d-M-Y',time()),
 
 			);

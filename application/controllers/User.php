@@ -84,15 +84,18 @@
 			//die;
 			
 			$data['country']=$this->Shop->get_country();
+			$data['reviews']=$this->User->cus_reviews($_SESSION['data']['customer']['cus_id']);
 			
+
+			//echo "<pre>";
+			//print_r($abc);
+ 
+			//die;
 			$this->load->view("customer/welcome",$data);
 		}
 
 		public function updateProfile(){
 
-			//echo "<pre>";
-			//print_r($_POST);
-			//die;
 			$data=array(
 
 				
@@ -112,9 +115,6 @@
 			$result=$this->User->update_profile($data,$_REQUEST['cus_id']);
 			
 			if($result){
-
-				//echo "sai aa";
-				//die;
 				
 				$_SESSION['data']['customer']=$data;
 
@@ -124,6 +124,41 @@
 			}else{
 
 				echo "something wrong";
+			}
+		}
+
+		public function add_review(){
+			
+			//echo "sb sai aa";
+			if(!isset($_REQUEST['star_selector'])){
+
+				echo "Please select rating star";
+
+				$this->session->set_flashdata('msg','Please select rating star');
+			}
+			else
+			{
+				$data = array(
+
+					"cus_id"		=> $_SESSION['data']['customer']['cus_id'],
+					"nick_name"		=> $_REQUEST['nick_name'],
+					"title"			=> $_REQUEST['title'],
+					"review"		=> $_REQUEST['review'],
+					"od_id"			=> $_REQUEST['od_id'],
+					"rating"		=> $_REQUEST['star_selector'],
+					"create_on"		=> date('d-M-Y',time()),
+
+				);
+
+				$result = $this->Shop->add_review($data);
+				
+				if($result){
+
+					echo  'Your review add successfully...!';
+					
+					$this->session->set_flashdata('msg', 'Your review add successfully...!');
+					
+				}
 			}
 		}
 		

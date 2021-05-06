@@ -1,40 +1,46 @@
-    <!-- Footer -->
-    <!--<div class="mob-footer container">
-			<div class="row">
-				<div class="col-lg-12  m-b-20">
-						<select class="form-control" id="notify_icon" onChange="window.location.href=this.value">
-							<option value="">CUSTOMER SERVICES</option>
-							<option value="<?php echo base_url('about-us/')?>">About US</option>
-							<option value="<?php echo base_url('contact-us/')?>">Contact Us</option>
-							<option value="<?php echo base_url('faqs/')?>">FAQs</option>
-							<option value="<?php echo base_url('blog/')?>">Blog</option>
-							<option value="#"></option>
-						</select>
-				</div>
-				<div class="copyright-text text-center col-lg-12">&copy; 2020 MysleepingTabs.com All Rights Reserved.</div>
-			</div>
-		</div>-->
-		
+<style type="text/css">
+	@media (max-width: 700px){
+	.jxPOhn{
+		bottom: 80px !important;
+	}
+}
+</style>
+	<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            telegram: "msted2020", // Telegram bot username
+            call_to_action: "Message us", // Call to action
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+
+<!-- /GetButton.io widget -->
+
+   <p style="color:white;"><?=date('Y-m-d H:i:s', time())?></p>
+   
     <div class="mob-footer container">
-    	
-				<div class="toggle accordion accordion-shadow">
-					<div class="ac-item">
-						<h5 class="ac-title">About US</h5>
-						<div class="ac-content">
-							<p>We are the top suppliers of Valium, Xanax, Ambien and Temazepam. We send from within U.K and we have simple payment terms.</p>
-							
-							<a href="<?php echo base_url('about-us/')?>" class="btn btn-inverted">Click Here</a>
-						</div>
-					</div>
-					<div class="ac-item">
-						
-						<h5 class="ac-title">Terms and Condition</h5>
-						<div class="ac-content">
-							<p>For Terms and Condition Go through the link below</p>
-							<a href="<?php echo base_url('terms-conditions/')?>" class="btn btn-inverted">Click Here</a>
-						</div>
-							
-					</div>
+		<div class="toggle accordion accordion-shadow">
+			<div class="ac-item">
+				<h5 class="ac-title">About US</h5>
+				<div class="ac-content">
+					<p>We are the top suppliers of Valium, Xanax, Ambien and Temazepam. We send from within U.K and we have simple payment terms.</p>
+					
+					<a href="<?php echo base_url('about-us/')?>" class="btn btn-inverted">Click Here</a>
+				</div>
+			</div>
+			<div class="ac-item">
+				<h5 class="ac-title">Terms and Condition</h5>
+				<div class="ac-content">
+					<p>For Terms and Condition Go through the link below</p>
+					<a href="<?php echo base_url('terms-conditions/')?>" class="btn btn-inverted">Click Here</a>
+				</div>
+			</div>
 					<div class="ac-item">
 						<h5 class="ac-title">Latest Blog</h5>
 						<div class="ac-content">
@@ -54,7 +60,7 @@
         	                            $name= implode('-', $name);
         
         	                			?>
-        	                				<li><a href="<?php echo base_url(strtolower($name).'/')?>"><?php echo $post['name'];?></a></li>
+        	                				<li><a href="<?php echo base_url()."blog/$name/"?>"><?php echo $post['name'];?></a></li>
         	                			<?php
         	                		}	
 		                		}
@@ -69,7 +75,7 @@
 							<address>
 								<span><i class="fa fa-map-marker-alt"></i> 19 Oakhall Court/Oakhall <br>Drive Sunbury-On-Thames Middlesex <br> TW16 7LE</span>
 								<span><i class="fa fa-phone"></i> +44 7563 084792</span>
-								<span><i class="far fa-envelope"></i> <a href="mailto:orders@mysleepingtabs.com">orders@mysleepingtabs.com</a><span>
+								<span><i class="far fa-envelope"></i> <a href="mailto:orders@mysleepingtabs.com">orders@mysleepingtabs.com</a></span>
 							</address>
 						</div>
 					</div>
@@ -77,7 +83,6 @@
 				<div class="copyright-text text-center col-lg-12">&copy; 2020 MysleepingTabs.com All Rights Reserved.</div>
 		</div>
     <footer id="footer" class="inverted">
-
       <div class="footer-content">
         <div class="container">
           <div class="row">
@@ -109,7 +114,7 @@
                             $name= implode('-', $name);
 
                 			?>
-                				<li><a href="<?php echo base_url(strtolower($name).'/')?>"><?php echo $post['name'];?></a></li>
+                				<li><a href='<?php echo base_url()."blog/$name/"?>'><?php echo $post['name'];?></a></li>
                 			<?php
                 		}
                 	?>
@@ -158,28 +163,20 @@
 					<ul class="list-icon">
 						<li><b><i class="fab fa-whatsapp"></i> +44 7563 084792</b></li>
 					</ul>
-
 					<div class="Review_star-rating">
 						<a class="reviewBtn" href="<?php echo base_url().'reviews'?>" target="blank">
 							<img src="<?php echo base_url().'asset/images/blog/stars-5.svg'?>" alt="4.5 stars: Excellent">
-							<b>Time For Review<b>
+							<b>Time For Review</b>
 						</a>
 					</div>
 				</div>
 			</div>
 
-
-            
-
-          </div>
+            </div>
         </div>
       </div>
-
-      
-      
-       <div class="copyright-content">
+      <div class="copyright-content">
 			<div class="container">
-				
 				<div class="copyright-text text-center">© <?php echo date('Y',time())?> MysleepingTabs.com All Rights Reserved.</div>
 			</div>
 		</div>
@@ -195,6 +192,3 @@
     <!--Template functions-->
     <script src="<?php echo base_url('asset/js/functions.js');?>"></script>
     <script src="<?php echo base_url('asset/js/custom.js');?>"></script>
-</body>
-
-</html>

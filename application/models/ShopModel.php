@@ -5,6 +5,7 @@
 		public function all_pages(){
 
 			$this->db->where('show',1);
+			
 			$result=$this->db->get('pages');
 
 			return $result->result_array();
@@ -64,7 +65,7 @@
 
 		public function single_product($pro_name){
 
-			$result=$this->db->query("SELECT * FROM products WHERE pro_link='".$pro_name."'");
+			$result=$this->db->query("SELECT * FROM products, categories WHERE categories.cat_id=products.cat_id AND pro_link='".$pro_name."'");
 			
 			return $result->result_array();
 		}
@@ -155,7 +156,7 @@
         public function posts(){
 
 			$result=$this->db->query("SELECT * FROM posts, users WHERE posts.post_added_by=users.u_id ORDER BY  posts.id DESC");
-			
+
 			return $result->result_array();
 		}
 		

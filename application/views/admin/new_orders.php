@@ -29,14 +29,20 @@
 	</br>
     <div class="card">
         <div class="card-body">
+
         	<h4 class="card-title">New Orders</h4>
-          	<div class="row">
+          	
+          	<div class="row" id="tbl">
+          		<input type="submit" class="btn btn-success chk-btn" id="o_pro" name="pro" value="Processing">
+          		&nbsp;&nbsp;
+          		<input type="submit" class="btn btn-primary chk-btn" id="o_com" name="com" value="Compeleted">
             	<div class="col-12">
               		<div class="table-responsive">
                 		<table id="order-listing" class="table">
                   			<thead>
                     			<tr>
-		                            <th>No</th>
+                    				<th><input type="checkbox" id="all_check"> Select </th>
+                    				<th>No</th>
 		                            <!--<th>Order No </th>-->
 		                            <th>Name</th>
 		                            <th>Date</th>
@@ -54,6 +60,7 @@
                   					foreach ($result as $key => $order) {
 	                        			?>
 	                        				<tr>
+	                        				    <td><input type="checkbox" class="chk" name="check[]" value="<?php echo $order['od_id']?>"></td>
 	                        				    <td><?php echo $key+1; ?></td>
 	                        					<!--<td><?php echo $order['od_id']  //$key+1; ?></td>-->
 	                        					
@@ -161,4 +168,43 @@
 	
 	});
 	
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$("#all_check").click(function(){
+
+			if($(this).prop("checked")==true){
+				
+				$(".chk").attr('checked', 'checked');	
+			}
+			else
+			{
+				$('.chk').removeAttr('checked');
+			}
+			
+		});
+
+		$(".chk-btn").click(function(){
+
+			var value =($(this).attr('id'));
+			var order_id = [];
+        	
+        	$.each($('input[class="chk"]:checked'), function(){
+
+        		order_id.push($(this).val())
+        	});
+        	
+        	$.ajax({
+
+        		url:"<?=base_url().'admin/updateMulOrderStatus'?>",
+        		type:"POST",
+        		data:{value, order_id},
+        		success:function(result){
+
+    				location.reload();
+        		},
+        	});
+		});
+	})
 </script>

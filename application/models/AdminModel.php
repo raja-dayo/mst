@@ -613,8 +613,6 @@
 
 			$this->db->set('cus_status', '0');
 
-			$this->db->set('message', '');
-
 			$result=$this->db->update('customers');
 		}
 
@@ -625,6 +623,19 @@
 			$result=$this->db->get('banned');
 			
 			return $result->result_array();
+		}
+
+		public function updatePage($data){
+
+			$this->db->where('p_id',$data['p_id']);
+
+			$this->db->set('page_content',$data['des']);
+
+			$this->db->set('update_on', date('Y-m-d H:i:s', time()));
+
+			$result=$this->db->update('pages');
+			
+			return ($result ? true:false);
 		}
 	}
 

@@ -27,30 +27,30 @@
 
 
     <script type="application/ld+json">
-  		{
-  		"@context": "http://schema.org/",
-  		"@type": "Organization",
-  		"url": "https://www.mysleepingtabs.com/",
-  		"logo": "asset/images/mstlogo.png"
-  		}
+        {
+        "@context": "http://schema.org/",
+        "@type": "Organization",
+        "url": "https://www.mysleepingtabs.com/",
+        "logo": "asset/images/mstlogo.png"
+        }
     </script>
     <script type="application/ld+json">
     {
-    	"@context": "http://schema.org",
-    	"name": "My Sleeping Tabs",
-    	"url": "https://www.mysleepingtabs.com/",
-    	"telephone": "+44 7563 084792",
-    	"priceRange": "GBP",
-    	"image": "asset/images/mstlogo.png",
-    	"@type": "LocalBusiness",
-    	"address": {
-    	"@type": "PostalAddress",
-    	"streetAddress": "19 Oakhall Court",
-    	"addressLocality": "LONDON",
-    	"addressRegion": "United Kingdom",
-    	"postalCode":"TW16 7LE",
-    	"email": "orders@mysleepingtabs.com"
-    	}
+        "@context": "http://schema.org",
+        "name": "My Sleeping Tabs",
+        "url": "https://www.mysleepingtabs.com/",
+        "telephone": "+44 7563 084792",
+        "priceRange": "GBP",
+        "image": "asset/images/mstlogo.png",
+        "@type": "LocalBusiness",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "19 Oakhall Court",
+        "addressLocality": "LONDON",
+        "addressRegion": "United Kingdom",
+        "postalCode":"TW16 7LE",
+        "email": "orders@mysleepingtabs.com"
+        }
     }
     </script>
 
@@ -69,7 +69,7 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
     <meta name="ahrefs-site-verification" content="a1eb6caa16736f6924b8bbd4c9b3c3b85de47a859873d2329fca9fb58ddda12c">
 
-    <?php
+      <?php
 
         $meta_data=$this->session->flashdata('metatag');
 
@@ -81,36 +81,32 @@ s0.parentNode.insertBefore(s1,s0);
     <link rel="icon" type="image/png" href="<?php echo base_url('asset/images/favicon.png')?>">   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
-   <!-- <title><?php echo $meta_data[0]['title'];?></title>
-    <meta name="title" content="<?php echo $meta_data[0]['title'];?>">
-    <meta name="description" content="<?php echo $meta_data[0]['description'];?>">
-    <meta name="keywords" content="<?php echo $meta_data[0]['keywords'];?>">-->
+   
     
-      <title><?php echo ($meta_data[0][title]=="")? 'Buy Anti-anxiety meds and pain killers online from a trustworthy supplier | MySleepingtabs.com' : $meta_data[0][title]?></title>
+     <title><?php echo ($meta_data[0][title]=="")? 'Buy Anti-anxiety meds and pain killers online from a trustworthy supplier | MySleepingtabs.com' : $meta_data[0][title]?></title>
 
-    <meta name="title" content="<?php echo ($meta_data[0][title]=="")? 'Buy Anti-anxiety meds and pain killers online from a trustworthy supplier | MySleepingtabs.com' : $meta_data[0][title]?>">
+    <meta name="title" content="<?php echo ($meta_data[0][title]=='')? 'Buy Anti-anxiety meds and pain killers online from a trustworthy supplier | MySleepingtabs.com' : $meta_data[0][title]?>">
 
-    <meta name="description" content="<?php echo ($meta_data[0][description]=="")? 'You can Buy pain meds and sleeping pills, anti-anxiety pills online from top vendor. We offer quality Xanax and valium in bulk quantities and small from within U.S and U.K at very affordable prices.' : $meta_data[0][description]?>">
+    <meta name="description" content="<?php echo ($meta_data[0][description]=='')? 'You can buy top quality pain meds , sleeping pills & anti-anxiety pills online in UK from top vendor. We are offering Top Quality Xanax and all other benzo pills at most reasonable price with express delivery within U.S & U.K. We accept bank transfer & bitcoin.' : $meta_data[0][description]?>">
 
 
-    <meta name="keywords" content="<?php echo ($meta_data[0][keywords]=="")? 'Buy Xanax online, buy oxycodone online, buy valium online, Xanax supplier, oxycodone supplier, valium supplier, buy sleeping pills, buy pain meds' : $meta_data[0][keywords]?>">
+    <meta name="keywords" content="<?php echo ($meta_data[0][keywords]=='')? 'Buy Xanax online, buy oxycodone online, buy valium online, Xanax supplier, oxycodone supplier, valium supplier, buy sleeping pills, buy pain meds' : $meta_data[0][keywords]?>">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <!-- Stylesheets & Fonts -->
     <link href="<?php echo base_url('asset/css/plugins.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/css/style.css')?>" rel="stylesheet">
-
-     
-
-     <label style="display: none;"><?=date('Y-m-d H:i:s', time())?></label>
+    
+    
+    
 </head>
 
 <body>
-
     
-   
-     <!-- Body Inner-->
+    
+    <!-- Body Inner -->
     <div class="body-inner">
       <!-- Topbar -->
-        <div id="topbar" class="topbar-fullwidth d-none d-lg-block">
+         <div id="topbar" class="topbar-fullwidth d-none d-lg-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
@@ -335,9 +331,7 @@ s0.parentNode.insertBefore(s1,s0);
                                     <li><a href="<?php echo base_url('buy-bitcoin-with-credit-card/')?>">Buy Bitcoin</a></li>
                                     <li><a href="<?php echo base_url('blog/')?>">Blog</a></li>
                                     <li><a href="<?php echo base_url('contact-us/')?>">Contact Us</a></li>
-
-
-                                    <?php
+                                     <?php
 
                                         if(isset($_SESSION['data']['customer'])){
                                             ?>
@@ -352,17 +346,17 @@ s0.parentNode.insertBefore(s1,s0);
                                            <?php 
                                         }
                                     ?>
-                                    
                                   
                                     
                                 </ul>
                             </nav>
                         </div>
                     </div>
+                    <!--<p style="color:white"><?php //echo date('Y-m-d H:i:s', time())?></p>-->
                     <!--END: NAVIGATION-->
                 
             </div>
         </header>
         <!-- end: Header -->
-		
-		
+        
+        
